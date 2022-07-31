@@ -7,8 +7,8 @@ const { json } = require('express');
 // NEW USER REGISTER CONTROLLER
 var register = async (req, res, next) => {
     try {
-        const { display_name, user_name, phone_number, details } = req.body;
-        if (!(display_name && user_name && phone_number && details)) {
+        const { user_name, phone_number, details } = req.body;
+        if (!(user_name && phone_number && details)) {
             res.status(400).send({
                 "status": false,
                 "message": "All input is required"
@@ -32,7 +32,6 @@ var register = async (req, res, next) => {
 
         //CREATE USER IN OUR DATABASE
         const user = Users.create({
-            display_name: display_name,
             user_name: user_name,
             phone_number: phone_number,
             details: details,

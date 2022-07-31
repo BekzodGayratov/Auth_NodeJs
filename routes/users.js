@@ -10,7 +10,7 @@ router.post('/register', registerUser.register);
 router.post('/login', registerUser.login);
 
 // TO GET ALL USERS
-router.get('/get_users',getUsers);
+router.get('/get_users', getUsers);
 
 
 module.exports = router;

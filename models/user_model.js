@@ -3,13 +3,8 @@ const Schema = mongoose.Schema;
 
 // NEW USER SCHEMA
 const UserSchema = new Schema({
-    display_name: {
-        type: String,
-        default: null,
-        required: true,
-    },
     user_name: {
-        type: String,
+        type: String,  
         required: true,
         default: null,
         unique: true,
@@ -27,4 +22,4 @@ const UserSchema = new Schema({
     access_token: { type: String },
 });
 
-module.exports = mongoose.model('user', UserSchema);
+module.exports = mongoose.model('user', UserSchema); 
